@@ -1,13 +1,13 @@
-package fr.norsys.configuration;
+package fr.norsys.utils;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class Config {
+public class PersistenceManager {
     private final EntityManager entityManager;
 
-    public Config() {
+    public PersistenceManager() {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence");
         entityManager = entityManagerFactory.createEntityManager();
     }

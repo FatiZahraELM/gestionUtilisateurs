@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1e4a004-1848-423b-948a-e7c3642fc713" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/norsys/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7eddaffd-22a9-4a1b-aa00-ccea2e8fdd46.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7eddaffd-22a9-4a1b-aa00-ccea2e8fdd46.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/norsys/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/norsys/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/norsys/configuration/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/norsys/utils/PersistenceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/norsys/dao/ProjetDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/norsys/dao/ProjetDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/norsys/dao/TacheDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/norsys/dao/TacheDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/norsys/dao/UtilisateurDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/norsys/dao/UtilisateurDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/norsys/entity/Projet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/norsys/entity/Projet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/norsys/entity/Tache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/norsys/entity/Tache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/norsys/entity/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/norsys/entity/Utilisateur.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +45,8 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -72,7 +77,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709886232603</updated>
-      <workItem from="1709886233706" duration="1001000" />
+      <workItem from="1709886233706" duration="13924000" />
     </task>
     <servers />
   </component>

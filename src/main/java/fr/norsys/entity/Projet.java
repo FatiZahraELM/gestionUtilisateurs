@@ -60,9 +60,10 @@ public class Projet {
         return idProjet;
     }
 
-    public Projet(String nomProjet, String descreption) {
+    public Projet(String nomProjet, String descreption,Utilisateur utilisateur) {
         this.nomProjet = nomProjet;
         this.descreption = descreption;
+        this.utilisateur=utilisateur;
     }
 
     public Projet(){

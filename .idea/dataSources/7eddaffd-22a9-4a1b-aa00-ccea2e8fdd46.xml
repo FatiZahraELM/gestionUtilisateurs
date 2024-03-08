@@ -1112,7 +1112,7 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     </schema>
     <schema id="334" parent="1" name="utilisateursdb">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-03-08.08:27:33</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-03-08.14:35:05</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <user id="335" parent="1" name="pma">
@@ -1121,5 +1121,101 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     <user id="336" parent="1" name="root">
       <Host>localhost</Host>
     </user>
+    <table id="337" parent="334" name="projets">
+      <Engine>MyISAM</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="338" parent="334" name="taches">
+      <Engine>MyISAM</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <table id="339" parent="334" name="utilisateurs">
+      <Engine>MyISAM</Engine>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </table>
+    <column id="340" parent="337" name="idProjet">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="341" parent="337" name="descreption">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="342" parent="337" name="nomProjet">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="343" parent="337" name="idUtilisateur">
+      <DasType>int(11)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <index id="344" parent="337" name="PRIMARY">
+      <ColNames>idProjet</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="345" parent="337" name="FK8tjkc18lojoeha3ti9uoinq5o">
+      <ColNames>idUtilisateur</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="346" parent="337" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="347" parent="338" name="idTache">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="348" parent="338" name="titre">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="349" parent="338" name="idprojet">
+      <DasType>int(11)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="350" parent="338" name="PRIMARY">
+      <ColNames>idTache</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="351" parent="338" name="FK7oj82lq8uns7qj1jjidphon6q">
+      <ColNames>idprojet</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="352" parent="338" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="353" parent="339" name="idUtilisateur">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>int(11)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="354" parent="339" name="email">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="355" parent="339" name="nom">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="356" parent="339" name="PRIMARY">
+      <ColNames>idUtilisateur</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="357" parent="339" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>

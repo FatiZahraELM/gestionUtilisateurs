@@ -1,6 +1,6 @@
 package fr.norsys.dao;
 
-import fr.norsys.configuration.Config;
+import fr.norsys.utils.PersistenceManager;
 import fr.norsys.entity.Utilisateur;
 
 import javax.persistence.EntityManager;
@@ -11,10 +11,27 @@ import java.util.List;
 
 public class UtilisateurDao {
 
-    Config config =new Config();
+    PersistenceManager persistenceManager =new PersistenceManager();
+    public void saveUtilisateur(Utilisateur utilisateur) {
+        EntityManager entityManager = persistenceManager.getEntityManager();
+        EntityTransaction transaction = null;
+        try {
+
+            transaction = entityManager.getTransaction();
+            transaction.begin();
+            entityManager.persist(utilisateur);
+            transaction.commit();
+        } catch (Exception ex) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            System.err.println(" utilisateur non enregistré: " + ex);
+            throw new RuntimeException(" utilisateur non enregistré: ", ex);
+        }
+    }
 
     public List<Utilisateur> rechercher() {
-        EntityManager entityManager = config.getEntityManager();
+        EntityManager entityManager = persistenceManager.getEntityManager();
         EntityTransaction transaction = null;
         try {
             transaction = entityManager.getTransaction();
@@ -36,7 +53,7 @@ public class UtilisateurDao {
 
     public void deleteUtilisateur()
     {
-        EntityManager entityManager = config.getEntityManager();
+        EntityManager entityManager = persistenceManager.getEntityManager();
         EntityTransaction transaction = null;
         try {
             transaction = entityManager.getTransaction();

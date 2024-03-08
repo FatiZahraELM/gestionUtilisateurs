@@ -16,7 +16,7 @@ public class Tache {
     @Column(name="titre")
     private String titre;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idprojet")
     private Projet projet;
 

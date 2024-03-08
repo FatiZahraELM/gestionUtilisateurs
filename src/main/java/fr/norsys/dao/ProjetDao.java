@@ -1,6 +1,6 @@
 package fr.norsys.dao;
 
-import fr.norsys.configuration.Config;
+import fr.norsys.utils.PersistenceManager;
 import fr.norsys.entity.Projet;
 import fr.norsys.entity.Tache;
 import fr.norsys.entity.Utilisateur;
@@ -13,12 +13,28 @@ import java.util.List;
 
 public class ProjetDao {
 
-    Config config=new Config();
+    PersistenceManager persistenceManager=new PersistenceManager();
 
+    public void saveProject(Projet project) {
+        EntityManager entityManager = persistenceManager.getEntityManager();
+        EntityTransaction transaction = null;
+        try {
 
+            transaction = entityManager.getTransaction();
+            transaction.begin();
+            entityManager.persist(project);
+            transaction.commit();
+        } catch (Exception ex) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            System.err.println("Failed to save project: " + ex);
+            throw new RuntimeException("Failed to save project", ex);
+        }
+    }
 
     public List<Projet> rechercher() {
-        EntityManager entityManager = config.getEntityManager();
+        EntityManager entityManager = persistenceManager.getEntityManager();
         EntityTransaction transaction = null;
         try {
             transaction = entityManager.getTransaction();
@@ -39,7 +55,7 @@ public class ProjetDao {
     }
 
     public void save(Projet projet){
-        EntityManager entityManager = config.getEntityManager();
+        EntityManager entityManager = persistenceManager.getEntityManager();
         EntityTransaction transaction = null;
         try {
 
@@ -58,7 +74,7 @@ public class ProjetDao {
     }
 
     public void deleteTaches(int idProjet){
-        EntityManager entityManager = config.getEntityManager();
+        EntityManager entityManager = persistenceManager.getEntityManager();
         EntityTransaction transaction = null;
         try {
             transaction = entityManager.getTransaction();
@@ -80,7 +96,7 @@ public class ProjetDao {
 
     }
     public void nvTacheProjet(Long idProjet, Tache tache) {
-        EntityManager entityManager = config.getEntityManager();
+        EntityManager entityManager = persistenceManager.getEntityManager();
         EntityTransaction transaction = null;
         try {
             transaction = entityManager.getTransaction();
@@ -95,6 +111,7 @@ public class ProjetDao {
             entityManager.persist(tache);
 
             transaction.commit();
+
         } catch (Exception e) {
             if (transaction != null && transaction.isActive()) {
                 transaction.rollback();
